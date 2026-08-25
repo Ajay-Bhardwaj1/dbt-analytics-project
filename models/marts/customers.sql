@@ -18,7 +18,7 @@ customer_orders AS (
 
 final AS (
     SELECT 
-        customers.cumtomer_id,
+        customers.customer_id,
         customers.first_name,
         customers.last_name,
         customer_orders.first_order_date,
@@ -26,7 +26,7 @@ final AS (
         COALESCE(customer_orders.number_of_orders, 0) AS number_of_orders
     FROM customers
     LEFT JOIN customer_orders
-        ON customers.cumtomer_id = customer_orders.customer_id
+        ON customers.customer_id = customer_orders.customer_id
 )
 
 SELECT * FROM final
