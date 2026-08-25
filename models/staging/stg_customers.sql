@@ -4,11 +4,11 @@ with Source as (
 
 renamed as (
     Select 
-        id as cumtomer_id,
+        id as customer_id,
         first_name,
         last_name,
     from source
 )
 
 
-select * from renamed;
+select * from renamed
