@@ -1,36 +1,37 @@
 version: 2
 
 models:
-    - name: customers
-      description:"one row per customer, enriched with order history stats."
-      columns:
-        - name: customer_id
-          description: "Primary Key - unique identifier for each customer."
-          tests:
-            - unique
-            - not_null
+  - name: customers
+    description: "One row per customer, enriched with order history stats."
+    columns:
+      - name: customer_id
+        description: "Primary Key - unique identifier for each customer."
+        tests:
+          - unique
+          - not_null
 
-        - name: number_of_orders
-          description: "Total count of orders placed by the customer"
+      - name: number_of_orders
+        description: "Total count of orders placed by the customer"
 
-    - name: orders
-      description: "One row per order, enriched with Total payment amount"
-      columns:
-        - name: order_id
-          description: "Primary kep - unique identifier for each order."
-          test: 
-            - unique
-            -not_null
-        - name: customer_id
-          description: "Foregin key referencing the customers models."
-          test:
+  - name: orders
+    description: "One row per order, enriched with total payment amount."
+    columns:
+      - name: order_id
+        description: "Primary key - unique identifier for each order."
+        tests: 
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Foreign key referencing the customers model."
+        tests:
           - not_null
           - relationships:
-            to: ref('customers')
-            field: customer_id
+              to: ref('customers')
+              field: customer_id
         
-        - name: status
-          description: "current status of the order."
-          tests:
-            - accepted_values:
-                values: ['completed','shipped','returned','return_pending','placed']
+      - name: status
+        description: "Current status of the order."
+        tests:
+          - accepted_values:
+              values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']
