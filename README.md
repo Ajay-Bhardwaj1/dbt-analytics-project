@@ -54,7 +54,7 @@ raw_payments → stg_payments ──┘
 
 ---
 
-**Author:** Ajay Kumar · [[LinkedIn](https://www.linkedin.com/in/ajay-kumar-26252019b/)]
+**Author:** Ajay Kumar · [LinkedIN](https://www.linkedin.com/in/ajay-kumar-26252019b/)]
 
 
 ### Resources:
